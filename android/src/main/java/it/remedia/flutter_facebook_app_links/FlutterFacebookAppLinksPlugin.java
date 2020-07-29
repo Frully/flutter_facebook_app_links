@@ -64,6 +64,7 @@ public class FlutterFacebookAppLinksPlugin implements MethodCallHandler {
 
     // Get user consent
     FacebookSdk.setAutoInitEnabled(true);
+    FacebookSdk.setDataProcessingOptions(new String[] {"LDU"}, 0, 0);
     FacebookSdk.fullyInitialize();
     AppLinkData.fetchDeferredAppLinkData(mContext,
       new AppLinkData.CompletionHandler() {
